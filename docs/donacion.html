@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Gracias por tu Compra | El Kiosco Oculto</title>
+    <link rel="icon" type="image/png" href=imagenes/logos/icono.png>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="donation-body">
+    <div class="donation-container">
+        <h2 class="donation-title">¡Ups, no pudimos completar tu compra!</h2>
+        
+        <p class="donation-message">En este momento hay tráfico interdimensional en la ruta de entrega y el intercambio con los proveedores no puede realizarse. Gracias por intentar comprar. Se aprecia muchísimo tu interés en "El Kiosco Oculto".</p>
+        
+
+
+        <p class="donation-info">Si querés apoyar para que el kiosco pueda seguir negociando con los vendedores interdimensionales y traer más productos "ilegales”, podés hacer una donación al siguiente CVU/Alias. Cada aporte ayuda a que podamos seguir abriendo portales… y evita que los Headcrabs se coman el servidor.</p>
+        
+        <div class="donation-options">
+            <button id="show-donation-info" class="donation-button">CVU / ALIAS DE DONACIÓN</button>
+            
+            <div id="donation-details" class="donation-details hidden">
+                <h3>Detalles para Donar</h3>
+                <p><strong>CVU:</strong> 00000003100069560156178</p>
+                <p><strong>Alias:</strong> santino.mercadolobo</p>
+                <p class="copy-note">(Haz clic en el alias para copiarlo.)</p>
+            </div>
+            
+            <a href="index.html" class="return-button">
+                Volver al Kiosco
+            </a>
+        </div>
+    </div>
+
+    <script type="module" src="js/products.js"></script>
+    <script type="module" src="js/app.js"></script>
+    <script>
+        // Lógica para mostrar y ocultar la información de donación
+        document.getElementById('show-donation-info').addEventListener('click', function() {
+            var details = document.getElementById('donation-details');
+            var button = this;
+
+            if (details.classList.contains('hidden')) {
+                details.classList.remove('hidden');
+                button.textContent = 'Ocultar Detalles de Donación';
+            } else {
+                details.classList.add('hidden');
+                button.textContent = 'CVU / ALIAS DE DONACIÓN';
+            }
+        });
+        
+        // Lógica para copiar el Alias al hacer clic
+        document.getElementById('donation-details').addEventListener('click', function(e) {
+            if (e.target.tagName === 'P' && e.target.innerHTML.includes('Alias')) {
+                const alias = 'santino.mercadolobo';
+                navigator.clipboard.writeText(alias).then(() => {
+                    alert('¡Alias copiado al portapapeles!');
+                }).catch(err => {
+                    console.error('Error al intentar copiar: ', err);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

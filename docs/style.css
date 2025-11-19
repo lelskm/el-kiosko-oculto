@@ -1,0 +1,1575 @@
+/* ---------------------------------- */
+/* 1. ESTILOS BASE Y TIPOGRAFÍA */
+/* ---------------------------------- */
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #ebebeb;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: #333;
+    margin-top: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* ---------------------------------- */
+/* 2. HEADER Y NAVEGACIÓN */
+/* ---------------------------------- */
+
+.top-header {
+    background-color: #333;
+    color: #fff;
+    height: 35px;
+    font-size: 0.8em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 40px;
+    gap: 20px;
+}
+.top-header p:first-child {
+    margin-right: auto;
+}
+
+.main-header {
+    background-color: #fff;
+    padding: 10px 40px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    /* Elimino gap aquí para tener más control sobre los elementos internos */
+    /* gap: 20px; */ 
+}
+
+/* --- ESTILOS DEL LOGO DE IMAGEN (REEMPLAZANDO H1) --- */
+.logo {
+    display: flex;
+    align-items: center;
+    /* Añadimos un margen derecho al logo para separarlo del buscador */
+    margin-right: 20px; 
+}
+
+.logo-link {
+    display: inline-block;
+    line-height: 1;
+}
+
+#site-logo {
+    /* Mismo tamaño que el h1 de 2.2em */
+    height: 4.5em; 
+    width: auto;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+/* --- FIN ESTILOS DEL LOGO --- */
+
+.search-bar {
+    display: flex;
+    flex-grow: 1; /* Esto hace que el buscador ocupe todo el espacio disponible */
+    /* Eliminamos margin-left: 20px; ya que el logo tiene margin-right */
+    /* margin-left: 20px; */ 
+    max-width: 600px;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 1em;
+    outline: none;
+}
+
+.search-bar button {
+    background-color: #00a650;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.user-options {
+    /* Añadimos un margen izquierdo para separar de la barra de búsqueda */
+    margin-left: 20px; 
+    white-space: nowrap; /* Evita que los enlaces se rompan en varias líneas */
+}
+
+.user-options a {
+    color: #333;
+    margin-left: 15px;
+    font-size: 0.95em;
+}
+
+.nav-bar {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-bar ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0 40px;
+    height: 40px;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-bar a {
+    color: #555;
+    font-weight: 500;
+}
+
+/* ---------------------------------- */
+/* 3. BANNER */
+/* ---------------------------------- */
+
+.hero-banner {
+    width: 100%;
+    aspect-ratio: 16 / 4; /* o la relación REAL de tu imagen */
+    overflow: hidden;
+}
+
+/* ======================= */
+/*        CAROUSEL         */
+/* ======================= */
+
+/* Contenedor general del carrusel */
+.carousel {
+    width: 100%;
+    height: 100%;   /* ← toma los 250px del hero-banner */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Track que se desliza */
+.carousel-track {
+    display: flex;
+    height: 100%;
+    width: 300%; /* 3 imágenes */
+    transition: transform 0.8s ease-in-out;
+}
+
+/* Cada ítem del carrusel */
+.carousel-item {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Imagen dentro de cada item */
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Solo la del medio es clickeable, por eso el <a> */
+.carousel-item a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+/* ---------------------------------- */
+/* 4. CONTENIDO PRINCIPAL (GRID) - HOME */
+/* ---------------------------------- */
+
+.main-content-wrapper {
+    display: grid;
+    /* Ancho del Sidebar (filtros) */
+    grid-template-columns: 220px 1fr;
+    gap: 20px;
+    /* Ancho máximo de todo el contenido */
+    max-width: 1500px;
+    /* Centrado en la página */
+    margin: 20px auto;
+    
+    /* Espacio interno de 100px a izquierda y derecha */
+    padding: 0 100px;
+}
+
+/* 🔄 ANTERIOR: .sidebar | NUEVO: .sidebar-filters */
+.sidebar-filters {
+    background-color: #ffffff; /* 🟢 FONDO BLANCO como las tarjetas */
+    padding: 20px; /* Aumento el padding para espacio interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra para destacarlo */
+    height: fit-content;
+    text-align: left;
+    overflow: hidden; /* Asegura que no haya desbordamiento */
+}
+
+.product-content h2 {
+    margin-bottom: 15px;
+}
+
+.product-content {
+    padding: 0;
+    margin: 0;
+}
+
+#product-grid {
+    display: grid;
+    /* Ancho de tarjeta a 260px para forzar 3 columnas */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilos para la sección de Filtros */
+.filter-section {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.filter-section h3 {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.filter-section > div {
+    display: flex;
+    align-items: center;
+}
+
+/* ---------------------------------- */
+/* 5. TARJETAS DE PRODUCTO (Home y Relacionados) */
+/* ---------------------------------- */
+
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    padding: 25px 15px; /* Aumento del padding superior e inferior a 25px */
+    min-height: 350px; /* Asegura una altura mínima más grande */
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+    
+    height: auto;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    cursor: pointer;
+}
+
+.product-card img {
+    max-height: 150px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+
+/* LIMPIEZA CRÍTICA DE MÁRGENES DE TEXTO INYECTADO POR JS */
+.product-card h3,
+.product-card p {
+    margin: 0;
+    padding: 0;
+}
+
+/* CLASE CLAVE: Contenedor agrupado de precio y cuotas */
+.product-info-bottom {
+    text-align: center;
+    margin-top: auto;
+}
+
+.product-card .product-price {
+    font-size: 1.4em;
+    color: #00a650;
+    font-weight: bold;
+    margin: 5px 0 0 0;
+}
+
+/* ESTILO DE CUOTAS - Para Home */
+.product-card .product-installment {
+    color: #00a650;
+    font-size: 0.85em;
+    font-weight: 500;
+    margin: 2px 0 0 0;
+}
+
+/* ---------------------------------- */
+/* 6. ESTILOS PARA LA PÁGINA DE DETALLE (producto.html) */
+/* ---------------------------------- */
+
+.product-detail-wrapper {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.product-detail-container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+/* ÁREA DE IMAGEN PRINCIPAL Y SLIDER - TAMAÑO FIJO */
+.image-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 450px;
+    justify-content: flex-start;
+}
+
+.image-area img {
+    max-width: 100%;
+    height: 80%;
+    border-radius: 4px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* INFO ÁREA - PRECIO GRANDE Y ESPACIADO */
+.info-area {
+    padding-right: 40px;
+}
+
+.info-area h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+/* ESTILO DE PRECIO MEJORADO */
+.info-area .product-price {
+    font-size: 2.5em;
+    color: #00a650;
+    font-weight: bold;
+    margin: 10px 0 20px;
+}
+
+/* ESTILOS DE CUOTAS PARA LA PÁGINA DE DETALLE */
+.product-installment-detail {
+    color: #00a650;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: -10px 0 20px 0;
+}
+
+/* VENDEDOR Y BOTÓN - BLOQUE DE COMPRA */
+.seller-info {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+/* ========================================================= */
+/* 🟢 AJUSTES DE BOTONES PERSONALIZADOS 🟢 */
+/* ========================================================= */
+
+/* Propiedades de BASE (Altura, Fuente, Borde-Caja) */
+.buy-button, .add-to-cart-button {
+    box-sizing: border-box;
+    height: auto;
+    /* Mismo padding VERTICAL para la misma altura visible */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    width: auto;
+}
+
+/* Estilo para el botón Comprar Ahora (ANCHO FIJO MAYOR) */
+.buy-button {
+    background-color: #00a650;
+    color: white;
+    border: none;
+    margin-top: 20px;
+    
+    width: 230px;
+    font-size: 1.1em;
+
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.buy-button:hover {
+    background-color: #008740;
+}
+
+/* Estilo para el botón "Agregar al Carrito" (COMPACTO) */
+.add-to-cart-button {
+    display: none !important;
+    background-color: #f0f0f0;
+    color: #00a650;
+    border: 1px solid #ddd;
+    
+    font-size: 1.0em;
+
+    /* Ajuste horizontal: compensando el borde de 1px */
+    padding-left: 29px;
+    padding-right: 29px;
+}
+
+.add-to-cart-button:hover {
+    background-color: #e0e0e0;
+    border-color: #00a650;
+}
+
+/* Estilo para el icono del carrito */
+.add-to-cart-button .cart-icon {
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+/* ESTILO PARA EL BOTÓN DE LIMPIAR RESEÑAS (Botón rojo) */
+.red-button {
+    background-color: #f44336 !important;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* DESCRIPCIÓN - ESTILOS MEJORADOS */
+.description-box {
+    margin-top: 25px;
+    padding-top: 15px;
+}
+
+.description-box h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.description-box p {
+    font-size: 1.15em;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* ESTILOS DEL SLIDER DE IMÁGENES (Miniaturas) */
+.thumbnail-slider {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border 0.2s ease;
+    overflow:hidden;
+}
+
+.thumbnail:hover, .active-thumbnail {
+    border-color: #00a650;
+}
+
+/* ---------------------------------- */
+/* 6.1. ESTILOS DE RESEÑAS Y ESTRELLAS */
+/* ---------------------------------- */
+
+.reviews-section {
+    width: 100%;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+}
+
+#review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+#review-form input[type="text"],
+#review-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+#review-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.submit-review-button {
+    background-color: #00a650;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 150px;
+    align-self: flex-end;
+}
+
+/* ⭐ ESTILOS DE ESTRELLAS INTERACTIVAS (Formulario) ⭐ */
+.rating-stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    font-size: 2em;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.rating-stars .star {
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+/* Estado de HOVER */
+.rating-stars .star:hover,
+.rating-stars .star:hover ~ .star {
+    color: gold;
+}
+
+/* Estado ACTIVO (seleccionado por JS) - CLAVE PARA EL FUNCIONAMIENTO */
+.rating-stars .star.active,
+.rating-stars .star.active ~ .star {
+    color: gold;
+}
+
+
+/* ⭐ ESTILOS DE ESTRELLAS DE VISUALIZACIÓN (Reseñas ya enviadas) ⭐ */
+.review-rating-display {
+    font-size: 1.4em;
+    line-height: 1;
+    white-space: nowrap;
+    color: gold;
+    margin: 0;
+}
+
+/* Mensaje del comentario */
+.review-comment {
+    margin: 5px 0 0 0;
+    font-size: 1.1em;
+    line-height: 1.5;
+    color: #555;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.review-rating-display .star-filled {
+    color: gold; /* Clase que JS añade a la estrella */
+}
+
+.review-rating-display .star-empty {
+    color: #ccc; /* Clase que JS añade a la estrella */
+}
+
+/* Estilos de la Lista de Comentarios */
+.review-item {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border-left: 4px solid #00a650;
+    border-radius: 4px;
+}
+
+/* Encabezado de la reseña: Contiene Autor, Estrellas y Botón de Borrar */
+.review-header {
+    display: flex;
+    /* CLAVE: Alinea el nombre a la izquierda y el meta (estrellas/botón) a la derecha */
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Estilos para el nombre del autor */
+.review-header h3 {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+    /* CLAVE: Asegura que el nombre y las estrellas puedan estar en la misma línea */
+    display: inline-flex; 
+    align-items: center;
+    gap: 10px; /* Espacio entre el ícono del usuario y el nombre */
+}
+
+.review-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre estrellas y el ícono de basura */
+}
+
+.review-item p {
+    margin: 5px 0 0 0;
+    font-size: 1.1em;
+    line-height: 1.5;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+/* ESTILOS PARA EL BOTÓN DE BORRAR RESEÑA (Papelera) */
+.delete-review-btn {
+    background: none;
+    border: none;
+    font-size: 1.4em;
+    cursor: pointer;
+    color: #f44336;
+    opacity: 0.6;
+    transition: opacity 0.2s, color 0.2s;
+    line-height: 1;
+    padding: 0;
+    width: auto;
+    height: auto;
+}
+
+.delete-review-btn:hover {
+    opacity: 1;
+    color: #c0392b;
+}
+
+/* Estilo para el mensaje cuando no hay reseñas */
+.no-reviews {
+    text-align: center;
+    color: #888;
+    margin-top: 20px;
+}
+
+.review-item:hover .delete-review-btn {
+    opacity: 1;
+    color: #f44336;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* ---------------------------------- */
+/* 7. FOOTER */
+/* ---------------------------------- */
+
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+/* ---------------------------------- */
+/* 8. TARJETAS DE CATEGORÍA */
+/* ---------------------------------- */
+
+.category-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.category-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+}
+
+.category-card img {
+    max-height: 200px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.category-card h3 {
+    font-size: 1.6em;
+    color: #00a650;
+    margin: 0;
+}
+
+/* ---------------------------------- */
+/* 9. PRODUCTOS RELACIONADOS (SLIDER HORIZONTAL) */
+/* ---------------------------------- */
+
+.related-products-section {
+    padding: 30px 0;
+    margin-top: 30px;
+    border-top: 1px solid #ddd;
+}
+
+.related-products-section h2 {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+/* El contenedor del slider horizontal */
+#related-products-grid {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 20px;
+    padding: 10px 20px 20px 20px;
+    scroll-snap-type: none;
+}
+
+/* Asegura que las tarjetas NO se encojan */
+#related-products-grid .product-card {
+    flex-shrink: 0;
+    width: 250px;
+    max-width: 250px;
+}
+
+/* Ocultar la barra de desplazamiento horizontal */
+/* Para Chrome, Safari, Opera */
+#related-products-grid::-webkit-scrollbar {
+    display: none;
+}
+
+/* Para IE, Edge, Firefox */
+#related-products-grid {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* ---------------------------------- */
+/* 10. ESTILOS PARA LA PÁGINA DE CARRITO (carrito.html) */
+/* ---------------------------------- */
+
+/* Contenedor principal con grid para carrito y resumen */
+.main-content-wrapper-carrito {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px 0;
+}
+
+.main-content-wrapper-carrito h1 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    padding-left: 20px;
+}
+
+.carrito-container {
+    display: grid;
+    /* Divide en una columna grande para productos y una pequeña para el resumen */
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Estilos de la lista de productos */
+.productos-carrito {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.item-carrito {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.item-carrito:last-child {
+    border-bottom: none;
+}
+
+.item-carrito img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-right: 20px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.item-info {
+    flex-grow: 1; /* Ocupa el espacio central */
+}
+
+.item-info h2 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.item-info p {
+    font-size: 0.9em;
+    color: #777;
+    margin: 0;
+}
+
+/* Estilo para la caja de cantidad */
+.item-cantidad input {
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 20px;
+}
+
+/* Estilo para el precio */
+.item-precio p {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #00a650;
+    width: 100px; /* Ancho fijo para alinear precios */
+    text-align: right;
+    margin-right: 20px;
+}
+
+/* Estilo del botón de eliminar (papelera) */
+.item-eliminar {
+    background: none;
+    border: none;
+    color: #f44336; /* Rojo */
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.item-eliminar:hover {
+    opacity: 0.7;
+}
+
+/* Estilos del resumen de compra (Columna derecha) */
+.resumen-compra {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+.resumen-compra h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.resumen-compra p {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: 1em;
+    color: #555;
+}
+
+.total-compra {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.total-compra h3 {
+    font-size: 1.4em;
+    color: #333;
+}
+
+/* Botón de continuar compra (verde, ancho total) */
+.checkout-button {
+    background-color: #00a650;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.checkout-button:hover {
+    background-color: #008740;
+}
+
+/* ---------------------------------- */
+/* 11. ESTILOS ESPECÍFICOS PARA DONACION.HTML (Fondo Negro) 👽 */
+/* ---------------------------------- */
+
+/* Aplica el fondo negro y el centrado a la página de donación */
+.donation-body {
+    background-color: #000; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    margin: 0;
+    font-family: 'Roboto', sans-serif; 
+    color: #fff; 
+    text-align: center; 
+}
+
+.donation-container {
+    background-color: #1a1a1a; 
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+    max-width: 600px;
+    width: 90%; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 20px; 
+}
+
+.donation-title {
+    color: #4CAF50; 
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    font-weight: 700; 
+}
+
+.donation-message,
+.donation-info {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #ccc; 
+}
+
+.product-summary {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.product-summary img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid #333; 
+}
+
+.product-summary p {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #eee;
+}
+
+.donation-options .donation-button {
+    background-color: #007bff; 
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 100%; 
+    max-width: 300px; 
+}
+
+.donation-options .donation-button:hover {
+    background-color: #0056b3;
+}
+
+/* ---------------------------------- */
+/* 12. ESTILOS DE BOTONES ADICIONALES DE DONACIÓN */
+/* ---------------------------------- */
+
+/* Estilo del Contenedor de Detalles (inicialmente oculto) */
+.donation-details {
+    background-color: #2c2c2c;
+    border: 1px dashed #4CAF50;
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 15px;
+    width: 100%;
+    max-width: 300px;
+    text-align: left;
+    transition: opacity 0.5s ease;
+    cursor: pointer; /* Indica que es interactivo */
+}
+
+/* Clase para manejar la visibilidad con JavaScript */
+.donation-details.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.donation-details h3 {
+    color: #4CAF50;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.donation-details p {
+    font-size: 0.95em;
+    color: #fff;
+    margin: 5px 0;
+}
+
+.donation-details p strong {
+    font-weight: 700;
+    color: #f7f7f7;
+}
+
+/* Nota de texto pequeño para indicar la acción de copiar */
+.copy-note {
+    font-size: 0.8em !important;
+    color: #999 !important;
+    margin-top: 5px !important;
+}
+
+/* Estilo para el Botón de Regreso (Volver al Kiosco) */
+.return-button {
+    /* Estilo neutro/oscuro para contrastar con el botón de donación */
+    background-color: transparent; 
+    color: #ccc;
+    border: 1px solid #444;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 240px;
+    margin-top: 20px;
+    text-align: center;
+    display: block; /* Necesario para que el enlace <a> ocupe el ancho definido */
+}
+
+.return-button:hover {
+    background-color: #2c2c2c;
+    border-color: #777;
+    color: #fff;
+}
+
+/* ESTILOS PARA EL OVERLAY Y EL SPINNER */
+
+/* Asegúrate de que este estilo esté presente y activo */
+.loading-overlay {
+    /* Clave: Oculto y fijo, listo para cubrir la pantalla */
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+    z-index: 9999; 
+    
+    /* Estilos del mensaje */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    
+    /* Nota: Si tienes un display: flex; aquí, elimínalo o el display: none; no funcionará. */
+}
+
+/* 2. ESTADO ACTIVO (SOLO ACTIVO POR JAVASCRIPT) */
+/* La función initiatePurchase en app.js ya usa .style.display = 'flex'; para esto */
+
+/* Estilo del Spinner (animación de rotación) */
+.spinner {
+    border: 8px solid #f3f3f3; /* Color de fondo del anillo */
+    border-top: 8px solid #3498db; /* Color de la parte giratoria (azul) */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}       
+
+
+
+
+/* ---------------------------------- */
+/* 13. ESTILOS DE LOGIN Y REGISTRO (OVERLAY) */
+/* ---------------------------------- */
+
+.login-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.90);
+    z-index: 10000; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-container h2 {
+    color: #00a650;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#auth-button {
+    background-color: #00a650;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+#auth-button:hover {
+    background-color: #008740;
+}
+
+.toggle-link {
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.toggle-link a {
+    color: #00a650;
+    font-weight: bold;
+}
+
+.auth-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: 500;
+    display: none;
+}
+
+.auth-message.error {
+    background-color: #ffe0e0;
+    color: #f44336;
+}
+
+.auth-message.success {
+    background-color: #e0fff0;
+    color: #00a650;
+}
+
+
+
+/* ---------------------------------- */
+/* 14. ESTILOS DE MI CUENTA */
+/* ---------------------------------- */
+
+.account-main-content {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.account-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.account-container h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.account-container h2 {
+    font-size: 1.5em;
+    color: #00a650;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.account-status {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.user-details-section {
+    margin-top: 20px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+    font-size: 1.1em;
+}
+
+.detail-label {
+    font-weight: 500;
+    color: #555;
+}
+
+.detail-value {
+    font-weight: bold;
+    color: #333;
+}
+
+.logout-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #d32f2f;
+}
+
+
+/* ---------------------------------- */
+/* 15. ESTILOS DE EDICIÓN DE CUENTA */
+/* ---------------------------------- */
+
+.user-details-form {
+    margin-top: 20px;
+    /* CLAVE: Transforma el formulario en un contenedor flexbox vertical */
+    display: flex; 
+    flex-direction: column; /* Apila los elementos hijos verticalmente */
+    gap: 20px; /* Añade espacio entre cada "detail-group" */
+}
+
+.detail-group {
+    margin-bottom: 20px;
+    text-align: left;
+    /* Asegura que cada campo ocupe su propia fila */
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+.detail-group label {
+    display: block; /* Asegura que la etiqueta esté en su propia línea */
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+.detail-group input {
+    width: 100%; /* Asegura que la entrada ocupe todo el ancho */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Estilos específicos para la entrada de contraseña con el botón */
+.password-input-wrapper {
+    display: flex;
+    width: 100%; /* Asegura que este wrapper ocupe todo el ancho */
+}
+
+.password-input-wrapper input {
+    flex-grow: 1; /* Ocupa el espacio restante */
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.toggle-password-button {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    transition: background-color 0.3s;
+}
+
+.toggle-password-button:hover {
+    background-color: #ddd;
+}
+
+/* Acciones y botones */
+.account-actions {
+    /* CLAVE: Cambia la dirección a columna para apilar */
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; /* Espacio entre los botones */
+    margin-top: 30px;
+}
+
+/* Estilo para el botón de Guardar */
+.save-button {
+    background-color: #00a650;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    flex-grow: 1;
+    min-width: 150px;
+    transition: background-color 0.3s;
+}
+
+.save-button:hover {
+    background-color: #008740;
+}
+
+/* Estilo para el botón de Borrar Cuenta */
+.delete-button {
+    background-color: #f44336; /* Rojo */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    flex-grow: 1;
+    min-width: 150px;
+    transition: background-color 0.3s;
+    order: 4; /* Lo pone al final */
+}
+
+.delete-button:hover {
+    background-color: #d32f2f;
+}
+
+/* Estilo para el botón de Cerrar Sesión */
+#logout-button {
+    background-color: #444; 
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    flex-grow: 1;
+    min-width: 150px;
+    transition: background-color 0.3s;
+}
+
+#logout-button:hover {
+    background-color: #222;
+}
+
+/* Ajustar el mensaje de estado de edición (usando clases ya definidas) */
+#edit-message {
+    margin-bottom: 20px;
+}
+
+
+/* 🟢 Estilo del Título Principal de la Barra */
+.sidebar-filters h2 {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #eee; /* Línea separadora sutil */
+    padding-bottom: 10px;
+}
+
+/* 🟢 Estilo para CADA GRUPO DE FILTRO (Separación por línea) */
+.filter-group {
+    margin-bottom: 30px; 
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0; /* ⬅️ LÍNEA SEPARADORA SUAVE */
+}
+
+/* Eliminar la línea inferior del último grupo para un acabado limpio */
+.filter-group:last-child {
+    border-bottom: none; 
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* 🟢 Estilo para los Títulos de cada Sección (Ej: 'Rango de Precio') */
+.filter-group h3 {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Para un aspecto más ordenado */
+    letter-spacing: 0.5px;
+}
+
+/* Contenedor para inputs de Rango de Precio (Mejora la simetría) */
+.price-inputs {
+    display: flex;
+    gap: 10px; 
+}
+
+/* 🟢 Estilo general para inputs y selects (Simetría y Padding) */
+.filter-group input[type="number"],
+.filter-group select {
+    width: 100%; 
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: #333;
+    box-sizing: border-box; 
+    appearance: none; 
+}
+
+/* 🟢 Estilo para el checkbox de Envío Gratis */
+.filter-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* 🟢 Estilo de los botones (Aplicar y Restablecer) */
+.sidebar-filters button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+}
+
+#apply-price-filter {
+    background-color: #08c417; /* Azul */
+    color: white;
+}
+
+#apply-price-filter:hover {
+    background-color: #0a7e00;
+}
+
+#reset-filters {
+    background-color: #6c757d; /* Gris */
+    color: white;
+    margin-top: 5px; 
+}
+
+#reset-filters:hover {
+    background-color: #5a6268;
+}
+
+/* --- Estilos para la Puntuación de Estrellas --- */
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse; /* Esto permite que el hover funcione de derecha a izquierda */
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.star-rating input {
+    display: none; /* Oculta los radio buttons */
+}
+
+.star-rating label {
+    font-size: 2em;
+    color: lightgray; /* Color por defecto */
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+/* Regla para colorear las estrellas seleccionadas y las anteriores */
+.star-rating input:checked ~ label {
+    color: gold;
+}
+
+/* Regla para el hover (efecto al pasar el mouse) */
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: orange;
+}

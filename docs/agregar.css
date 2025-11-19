@@ -1,0 +1,109 @@
+/* Fondo general blanco */
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;    /* ← FONDO BLANCO REAL */
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+/* Caja blanca centrada con sombra y simetría perfecta */
+.form-container {
+    background: #ffffff;
+    padding: 30px;
+    width: 380px;
+
+    /* Bordes redondeados */
+    border-radius: 15px;
+
+    /* Sombra para que se destaque sobre el fondo blanco */
+    box-shadow: 0 0 35px rgba(0,0,0,0.15);
+}
+
+/* Título */
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #0d1b3a;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Inputs perfectamente simétricos */
+form input,
+form textarea {
+    width: 100%;
+    box-sizing: border-box;   /* ← HACE LA SIMETRÍA PERFECTA */
+    margin-bottom: 16px;
+    padding: 12px;
+
+    border: 2px solid #c7c7c7;
+    border-radius: 8px;
+    font-size: 15px;
+
+    outline: none;
+    transition: 0.2s;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #0d1b3a;
+}
+
+form textarea {
+    resize: none;
+    height: 100px;
+}
+
+/* Botón verde */
+button {
+    width: 100%;
+    padding: 12px;
+
+    background: #2ecc71;
+    color: white;
+
+    font-size: 17px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #27ae60;
+}
+
+/* Estado */
+#status {
+    margin-top: 12px;
+    text-align: center;
+    font-weight: bold;
+    color: #0d1b3a;
+}
+
+.volver-btn {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+
+    background: #182848;    /* azul */
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-size: 16px;
+
+    transition: 0.2s;
+}
+
+.volver-btn:hover {
+    background: #0f1a34;
+}

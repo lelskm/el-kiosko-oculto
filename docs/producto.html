@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href=imagenes/logos/icono.png>
+
+    <title>Detalle del Producto | La Tienda Inexistente</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+
+   
+
+    <div class="top-header">
+
+        <p>Envío a tu ubicación</p>
+
+        <p></p>
+
+    </div>
+
+   
+
+    <div class="main-header">
+
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+                 <img src="imagenes/logos/logo.png" alt="El Kiosco Oculto Logo" id="site-logo">
+            </a>
+        </div>
+
+        <div class="search-bar">
+
+            <input type="text" placeholder="Buscar productos, marcas y más...">
+
+            <button>Buscar</button>
+
+        </div>
+
+        <div class="user-options">
+
+            <a href="mi-cuenta.html">Mi cuenta</a>
+            <a href="#" id="compras-link">Compras</a>
+           <a href="carrito.html"></a> 
+
+        </div>
+
+    </div>
+
+   
+
+    <nav class="nav-bar">
+
+        <ul>
+
+            <li><a href="index.html">Inicio</a></li>
+
+            <li><a id="category-link" href="index.html?filter=categorias">Categorías</a></li>
+
+            <li><a href="index.html?filter=ofertas">Ofertas</a></li>
+
+            <li><a href="index.html?filter=historial">Historial</a></li>
+
+        </ul>
+
+    </nav>
+
+   
+
+    <main>
+
+        <div class="product-detail-wrapper">
+          
+<div class="product-detail-wrapper"> <div id="product-detail" class="product-detail-container">
+
+        <div class="image-area">
+            <img id="product-image" src="" alt="Imagen del producto">
+            <div id="thumbnail-slider" class="thumbnail-slider">
+            </div>
+        </div>
+
+        <div class="info-area">
+            <h2 id="product-name">Cargando Producto...</h2>
+            <p id="product-price" class="product-price">$0,00</p>
+            
+            <div class="seller-info">Vendido por: <span id="product-seller">Vendedor</span></div>
+
+            <button class="buy-button">Comprar Ahora</button>
+            <button class="add-to-cart-button">
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                Agregar al Carrito
+            </button>
+
+            <div class="description-box">
+                <h3>Descripción</h3>
+                <p id="product-description"></p>
+            </div> </div> </div> <div class="description-box" id="extended-info-area">
+        </div>
+
+    </div>
+
+           <section id="extended-info-area" class="additional-info-section">
+            </section>
+        
+<div class="reviews-section">
+
+    <h3>Deja tu opinión</h3>
+
+    <form id="review-form">
+
+        <div class="review-form-rating">
+            <label for="rating-title">Tu Puntuación:</label>
+
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Excelente">★</label>
+                <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Muy bueno">★</label>
+                <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Bueno">★</label>
+                <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Regular">★</label>
+                <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Malo">★</label>
+            </div>
+        </div>
+        
+        <textarea id="review-text" placeholder="Escribe tu comentario..." required></textarea>
+
+        <button type="submit" id="submit-review-button" class="submit-review-button">Enviar Reseña</button>
+    </form>
+
+    <h2 class="reviews-title">Reseñas de Usuarios</h2>
+    
+    <button id="clear-reviews-btn" class="red-button submit-review-button">
+        Limpiar TODAS las Reseñas de este Producto
+    </button>
+    
+    <div id="reviews-list">
+    </div>
+
+</div>
+
+        <section class="related-products-section">
+
+            <h2 id="related-title">Productos Relacionados</h2>
+
+            <div id="related-products-grid" class="product-grid">
+
+                </div>
+
+        </section>
+
+
+
+    </main>
+
+   
+
+    <footer class="site-footer">
+
+        <p>&copy; 2025 El Kiosco Oculto.</p>
+
+
+    </footer>
+
+    <div id="loading-overlay" class="loading-overlay">
+    <div class="spinner"></div>
+        <p>Comprando...</p>
+    </div>
+
+            <script type="module" src="js/products.js"></script>
+            <script type="module" src="js/product.js"></script>
+            <script type="module" src="js/app.js"></script>
+            <script type="module" src="js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href=imagenes/logos/icono.png>
+    <title>Ofertas | El Kiosco Oculto</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header>
+        <div class="top-header">
+            <p>Envío a cualquier ubicación</p>
+            <p></p>
+        </div>
+        
+        <div class="main-header">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="imagenes/logos/logo.png" alt="El Kiosco Oculto Logo" id="site-logo">
+                </a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar productos...">
+                <button>Buscar</button>
+            </div>
+            <div class="user-options">
+                <a href="#">Mi cuenta</a>
+                <a href="#" id="compras-link">Compras</a>
+                 <a href="carrito.html"></a>
+                
+            </div>
+        </div>
+        
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a id="category-link" href="index.html?filter=categorias">Categorías</a></li>
+                <li><a href="index.html?filter=ofertas">Ofertas</a></li>
+                <li><a href="index.html?filter=historial">Historial</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="hero-banner">
+            <img src="imagenes/logos/publicidad.png" alt="Información Publicitaria" class="banner-image">
+        </div>
+    
+        <div class="main-content-wrapper">
+            
+            <aside class="sidebar-filters">
+                <h2>Filtros</h2>
+    <div id="no-results-message" style="display: none; padding: 20px; font-size: 1.2em; color: #f44336; font-weight: bold; text-align: center; background-color: #fff0f0; border-radius: 8px; margin-top: 20px;">
+    </div>
+                <div class="filter-group">
+                    <h4>Envío</h4>
+                    <label><input type="checkbox" id="filter-envio-gratis"> Envío Gratis</label>
+                </div>
+    
+                <div class="filter-group">
+                    <h4>Ordenar por</h4>
+                    <select id="sort-order">
+                        <option value="default">Productos Destacados (Defecto)</option>
+                        <option value="price-asc">Precio: Menor a Mayor</option>
+                        option value="price-desc">Precio: Mayor a Menor</option>
+                    </select>
+                </div>
+
+    <div class="filter-group">
+        <h4>Rango de Precio</h4>
+        <input type="number" id="price-min" placeholder="Mínimo" value="" min="0">
+        <input type="number" id="price-max" placeholder="Máximo" value="" min="0">
+        <button id="apply-price-filter">Aplicar Filtro</button>
+    </div>
+    
+    <button id="reset-filters">Restablecer Filtros</button>
+
+</aside>
+    
+            <section class="product-content">
+                <h2 id="section-title">🔥 ¡Ofertas del Kiosco Oculto!</h2> 
+                <h2 style="margin: 0;">No hay ofertas en este momento.</h2>
+                <div id="product-grid" class="product-grid"> 
+                    <!-- offers.js renderiza aquí -->
+                </div>
+            </section>
+            
+        </div>
+    </main>
+    
+    <footer class="site-footer">
+        <p>&copy; 2025 El Kiosco Oculto.</p>
+    </footer>
+
+    <!-- Carga SOLO los scripts para la página de ofertas -->
+    <script type="module" src="js/products.js"></script>
+    <script type="module" src="js/offers.js"></script>
+</body>
+</html>
