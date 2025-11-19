@@ -1586,3 +1586,30 @@ a {
 .delete-product-btn:hover {
     background-color: #c62828;
 }
+
+/* ===================================== */
+/* 📱 ADAPTACIÓN PARA MÓVILES (PEGAR AQUÍ) */
+/* ===================================== */
+@media (max-width: 768px) {
+    /* Estas reglas solo se aplicarán cuando el ancho 
+       de la pantalla sea 768 píxeles o menos (celulares y tablets).
+    */
+
+    /* EJEMPLO 1: Ajustar el menú */
+    .header-menu {
+        flex-direction: column; /* Apila los elementos verticalmente */
+        align-items: flex-start;
+    }
+
+    /* EJEMPLO 2: Ajustar la cuadrícula de productos (Si era de 4, ahora es de 2) */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px; /* Reduce el espacio */
+    }
+
+    /* EJEMPLO 3: Reducir padding de secciones grandes */
+    section {
+        padding: 10px;
+    }
+}
+
