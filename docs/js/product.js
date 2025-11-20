@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const thumbnailSlider = document.getElementById('thumbnail-slider');
     const productDescriptionElement = document.getElementById('product-description');
     const productSellerElement = document.getElementById('product-seller');
-    const buyButton = document.getElementById('buy-button');
+    const buyButton = document.querySelector('.buy-button');
     const addToCartButton = document.getElementById('add-to-cart-button');
     const reviewForm = document.getElementById('review-form');
     const reviewRatingInput = document.getElementById('review-rating');
@@ -483,4 +483,5 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Producto eliminado correctamente.");
         window.location.href = "index.html";
     });
+
 });
